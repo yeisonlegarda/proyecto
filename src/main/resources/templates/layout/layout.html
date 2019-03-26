@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head th:fragmet="head">
+<meta charset="UTF-8" />
+<title th:text="${titulo}">Insert title here</title>
+
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous" />
+
+<link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}" />
+
+<script th:src="@{/js/jquery-ui.min.js}"></script>
+</head>
+<body>
+	<header th:fragmet="header">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Navbar</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link active" href="#">Home <span
+						class="sr-only">(current)</span></a> <a class="nav-item nav-link"
+						href="#">Features</a> <a class="nav-item nav-link"
+						th:href="@{/listar}">Cliente</a>
+				</div>
+			</div>
+		</nav>
+		<div class="alert alert-success" th:text="${success}"
+			th:if="${success}!=null"></div>
+		<div class="alert alert-danger" th:text="${danger}"
+			th:if="${danger}!=null"></div>
+		<div class="alert alert-warning" th:text="${warning}"
+			th:if="${warning}!=null"></div>
+		<div class="alert alert-info" th:text="${info}" th:if="${info}!=null"></div>
+	</header>
+
+	<div class="container"></div>
+
+	<footer th:fragmet="footer" class="container">
+		<p>&copy; rigth reserved</p>
+	</footer>
+
+
+
+</body>
+</html>
